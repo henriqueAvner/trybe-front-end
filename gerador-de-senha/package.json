@@ -4,13 +4,14 @@
   "description": "gerador de senhas teste",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite --open"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nanoid": "^4.0.2"
+    "@trybe/eslint-config-frontend": "^1.11.3",
+    "nanoid": "^4.0.2",
+    "vite": "^4.4.9"
   },
-  
-    "type": "module"
+  "type": "module"
 }
