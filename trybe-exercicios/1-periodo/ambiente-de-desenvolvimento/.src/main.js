@@ -4,7 +4,7 @@ const textarea = document.querySelector("#texto");
 const buttonEl = document.querySelector("#validate");
 const optionText = document.querySelector("#option");
 const finalText = document.querySelector("#resp");
-
+const UUID_VERSION = 4;
 buttonEl.addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -12,7 +12,7 @@ buttonEl.addEventListener("click", (event) => {
     hexColor: validator.isHexColor(textarea.value),
     email: validator.isEmail(textarea.value),
     cpf: validator.isTaxID(textarea.value, "pt-BR"),
-    uuid: validator.isUUID(textarea.value, 4),
+    uuid: validator.isUUID(textarea.value, UUID_VERSION),
     url: validator.isURL(textarea.value),
   };
 
