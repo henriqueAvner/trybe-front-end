@@ -1,0 +1,7 @@
+ <span> ELEMENTO DE LINHA</span>
+ <div>ELEMENTO DE BLOCO</div>
+
+ -> Elas devem ser usadas apenas para fins de estilização;
+
+-> pegando o link da fonte no google. posso colá-la no head do html, e utilizá-la no CSS.
+

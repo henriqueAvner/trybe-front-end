@@ -1,3 +1,5 @@
+import './style.css';
+import './reset.style.css';
 //  const button = document.querySelector('#button');
 //  const cCoins = document.querySelector('#moedas');
 // // const placeCoin = document.querySelector('#coin');
