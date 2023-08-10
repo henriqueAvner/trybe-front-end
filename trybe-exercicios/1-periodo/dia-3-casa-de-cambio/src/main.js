@@ -1,32 +1,42 @@
+import { renderCoins } from './componentes';
+import { fetchExchange } from './services/exchange';
+
 import './style.css';
 import './reset.style.css';
-//  const button = document.querySelector('#button');
-//  const cCoins = document.querySelector('#moedas');
-// // const placeCoin = document.querySelector('#coin');
 
-const moeda = 'USD';
-const API_COINS = fetch(`https://api.exchangerate.host/latest?base=${moeda}`);
-
-
-const objectCoins = API_COINS
-.then((res) => res.json())
-.then((data) => data.rates)
-.catch((err) => err.message);
+const fakeCoins = [
+    {name:'USD', value:'80'},
+    {name:'USD', value:'80'},
+    {name:'USD', value:'80'},
+    {name:'USD', value:'80'},
+    {name:'USD', value:'80'},
+    {name:'USD', value:'80'}
+]
+renderCoins(fakeCoins, 'BRL');
 
 
-
-// button.addEventListener('click',() => {
-//     const result = document.createElement('p');
-//     result.innerHTML = getCoin();
-//     cCoins.appendChild(result);
-// })
+const buttonElement = document.querySelector('header form button');
 
 
-const getCoin = () => {
-   objectCoins.then((data) => {
-    const obj = data.rates;
-        
-    })  
-}
-
-console.log(getCoin());
+buttonElement.addEventListener('click', () => {
+    const inputElement = document.querySelector('header form input');
+    const inputValue = inputElement.value;
+    
+    fetchExchange(inputValue)
+    .then(exchange => {
+        //converter {USD: 80}
+        //para [{name: USD, value: 80}]
+        const rates = exchange.rates;
+        const base = exchange.base;
+        const ratesArray = Object.entries(rates);
+        const ratesArrayToObject = ratesArray.map(rateCoin => {
+            const name = rateCoin[0];
+            const value = rateCoin[1];
+            return {
+                name,
+                value
+            }
+        })
+        renderCoins(ratesArrayToObject, base )
+    })
+})
