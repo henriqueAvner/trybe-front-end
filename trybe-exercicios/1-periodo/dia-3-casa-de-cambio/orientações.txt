@@ -1,0 +1,29 @@
+ <span> ELEMENTO DE LINHA</span>
+ <div>ELEMENTO DE BLOCO</div>
+
+ -> Elas devem ser usadas apenas para fins de estilização;
+
+-> pegando o link da fonte no google. posso colá-la no head do html, e utilizá-la no CSS.
+
+JAVASCRIPT:
+
+
+ -> criar uma função para renderizar uma li:
+    recebe como parametro o nome da moeda e o valor
+    essa função irá criar um elemento (li)
+    dentro da li, colocaremos a tag <b>${nome da moeda}</b> e <span>${valor da moeda}</span>
+    retorna o lielement criado;
+
+-> Criar uma função, que renderizará na tela a info das moedas, reaproveitando a função da li acima:
+[{name: 'USD', value: '80'}]
+
+a função recebe 2 parametros, coins (o array de obj) e basecoins (nome da moeda);
+coins.forEach(coin => {
+    const name = coin.name; //
+    const value = name.value; //
+
+    const liElement = createLiElement(name,value) // atribui a função acima, com os parametros coin.name e name.value a uma variavel;
+
+})
+
+-> dentro da função acima, preciso inserir a li criada dentro da ul, entao, se utiliza o document.querySelector('ul') atribuido a uma variavel, para utilizar o appendChild.
