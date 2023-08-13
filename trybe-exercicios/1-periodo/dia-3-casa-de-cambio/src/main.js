@@ -4,14 +4,6 @@ import { fetchExchange } from './services/exchange';
 import './style.css';
 import './reset.style.css';
 
-const fakeCoins = [
-    {name:'USD', value:'80'},
-    {name:'USD', value:'80'},
-    {name:'USD', value:'80'},
-    {name:'USD', value:'80'},
-    {name:'USD', value:'80'},
-    {name:'USD', value:'80'}
-]
 renderCoins(fakeCoins, 'BRL');
 
 
@@ -40,3 +32,5 @@ buttonElement.addEventListener('click', () => {
         renderCoins(ratesArrayToObject, base )
     })
 })
+
+//1:59:21
