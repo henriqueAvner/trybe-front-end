@@ -1,0 +1,20 @@
+PROMISSES:
+
+possui 2 argumentos -> resolve e reject;
+
+estrutura:
+
+new Promisse((resolve, reject) => {
+    resolve = quando a condição é correta;
+    reject  = quando a condição é incorreta;
+})
+
+A PROMISSE SÓ É EXECUTADA, QUANDO ENCADEADA AO MÉTODO THEN;
+
+new Promisse((resolve, reject) => {
+    resolve = quando a condição é correta;
+    reject  = quando a condição é incorreta;
+})
+.then((data) => {
+    data; // o que quiser ser feito a partir do dado passado como parametro.
+})
